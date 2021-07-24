@@ -1,0 +1,15 @@
+<launch>
+  <!-- Command-line args; e.g. task:=Hover agent:=TRPO-->
+  <arg name="task" default="MyTask" doc="Task to run" />
+  <arg name="agent" default="DDPG" doc="Agent to execute task" />
+
+  <!-- Parameters; access in code, e.g. rospy.get_param('task') -->
+  <param name="task" value="$(arg task)" />
+  <param name="agent" value="$(arg agent)" />
+
+  <!-- ROS nodes (processes) to launch -->
+  <node name="Simulation" pkg="orchestrator" type="Linux_build.x86_64"/>
+  <node name="tcptalker"  pkg="orchestrator" type="connect" output="screen"/>
+  <node name="handle_node" pkg = "orchestrator" type = "handleNode" output="screen"/>
+
+</launch>
