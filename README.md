@@ -10,7 +10,13 @@ $ catkin_make
 
 $ source devel/setup.bash
 
-put the folder orchestrator into project_rl/devel/lib
+$ cd src/orchestrator/scripts
+
+$ chmod +x connect
+
+$ chmod +x handelNode
+
+put the folder RL-drone-with-ros-ddpg-and-unity/orchestrator under project_rl/devel/lib
 
 $ conda activate iros
 
