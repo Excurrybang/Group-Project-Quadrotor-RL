@@ -2,7 +2,7 @@
 
 to run the project
 
-$ git clone https://github.com/Excurrybang/RL-drone-with-ros-ddpg-and-unity
+$ git clone https://github.com/Excurrybang/Group-Project-Quadrotor-RL
 
 $ cd project_rl
 
@@ -16,7 +16,7 @@ $ chmod +x connect
 
 $ chmod +x handelNode
 
-put the folder RL-drone-with-ros-ddpg-and-unity/orchestrator under project_rl/devel/lib
+put the folder Group-Project-Quadrotor-RL/orchestrator under project_rl/devel/lib
 
 $ cd project/devel/lib/orchestrator
 
