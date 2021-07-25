@@ -30,7 +30,7 @@ class MyTask(gym.Env):
         self.state_size = 3
         
         # Task-specific parameters
-        self.max_duration = 15           # secs
+        self.max_duration = 30           # secs
         self.target_z = 10.0             # meters
         self.last_timestamp = 0
         self.state = np.array([0,0,0])

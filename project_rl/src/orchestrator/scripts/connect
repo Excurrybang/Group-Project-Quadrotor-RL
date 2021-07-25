@@ -43,7 +43,7 @@ class Connect:
         while not rospy.is_shutdown():
             self.empty_socket(self.sock_recv)
 
-            for i in range(300):
+            for i in range(600):
 
                 if speed is not None :
                     self.data = speed
