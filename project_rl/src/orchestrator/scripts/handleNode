@@ -51,13 +51,15 @@ class HandleNode:
                 speed, done = self.task.update(self.timestamp, self.drone_pose)
                 if done:
                     self.reset()
+                elif self.drone_pose[1] > 40.0:
+                    self.reset()
                 elif speed is not None:
                     self.pub_speed_info.publish(speed)
             rate.sleep()
 
     def reset(self):
         self.state = 'RESET'
-        speed = 0.0
+        speed = -1.0
         self.pub_speed_info.publish(speed)
         time.sleep(self.transient_period)
         

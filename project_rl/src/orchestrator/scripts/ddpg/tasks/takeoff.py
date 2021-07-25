@@ -34,6 +34,8 @@ class MyTask(gym.Env):
         self.target_z = 10.0             # meters
         self.last_timestamp = 0
         self.state = np.array([0,0,0])
+        self.last_action = 0
+        self.last_reward = 0
 
         # total run time
         self.timer = rospy.Time()
@@ -47,6 +49,8 @@ class MyTask(gym.Env):
         # reset the position and speed
         self.last_timestamp = 0
         self.state = np.array([0,0,0])
+        self.last_action = 0
+        self.last_reward = self.get_reward(self.state)
 
     def update(self, timestamp, pose):
         self.next_state = np.array([pose[0], pose[1], pose[2]])
@@ -62,10 +66,12 @@ class MyTask(gym.Env):
 
         reward = self.get_reward(pose) # get reward
 
-        self.agent.step(self.state, action_, reward, self.next_state, done)
+        self.agent.step(self.state, self.last_action, self.last_reward, self.next_state, done)
         
         self.last_timestamp = timestamp
         self.state = self.next_state
+        self.last_action = action
+        self.last_reward = reward
 
         # calculate the time from seconds to minutes and show
         self.time_used = self.timer.now() - self.init_time

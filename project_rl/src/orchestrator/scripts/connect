@@ -58,7 +58,9 @@ class Connect:
                 
                 time.sleep(0.05)
 
-                if float(self.state_arr[1]) < 0 or float(self.state_arr[1]) > 30:
+                if float(self.state_arr[1]) < 0:
+                    break
+                if self.data.data == -1.0:
                     break
 
             # reset the position of drone
