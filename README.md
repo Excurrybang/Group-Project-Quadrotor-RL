@@ -1,4 +1,4 @@
-# RL-drone-with-ros-ddpg-and-unity
+# Group-Project-Quadrotor-RL
 
 to run the project
 
