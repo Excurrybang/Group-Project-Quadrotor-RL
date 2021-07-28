@@ -1,5 +1,7 @@
 # Group-Project-Quadrotor-RL
 
+Use ROS with DDPG reinforcement-learning algorithm to control a simulated quadrotor in Unity， written by python
+
 to run the project
 
 $ git clone https://github.com/Excurrybang/Group-Project-Quadrotor-RL
